@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(165deg, #262f3e, #1a2129);
+    background-attachment: fixed;
+  }
+  #library {
+    margin: 1rem;
+  }
+  .games {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game {
+    margin: 1rem;
+    overflow: hidden;
+    border-radius: 7px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    cursor: pointer;
+    max-width: 200px;
+    position: relative;
+    padding: 0;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.8);
+    transition: 0.2s all ease-in-out;
+  }
+  
+  .game img {
+      width: 100%;
+      display: inherit;
+    }
+  
+  .game:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(
+        -135deg,
+        rgba(200, 230, 250, 1) 0%,
+        transparent 50%
+      );
+      background-size: 200%;
+      box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+      transition: 0.2s all ease-in-out;
+    }
+  
+  .game:hover {
+      transform: perspective(50em) rotateX(10deg) scale(1.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+      z-index: 10;
+    }
+  
+  .game:hover:before {
+        background-position: 50%;
+      }
+
+      body {
+        background-color: #121221;
+      }
+      
+      img {
+        width: 100%;
+      }
+      
+      .library {
+        display: flex;
+        grid-gap: 16px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .game {
+        width: 200px;
+        display: flex;
+        perspective: 1000px;
+        perspective-origin: center top;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+      }
+      .game .game-wrapper {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        transform-origin: 100% 0;
+        box-shadow: 0px 10px 39px 10px rgba(62, 66, 66, 0.22);
+        border-radius: 2px;
+        transition: transform 0.3s ease-in-out;
+      }
+      .game .game-wrapper:hover {
+        transform: rotateX(10deg);
+      }
+      .game .game-wrapper:hover .gradient {
+        height: 100%;
+        opacity: 1;
+      }
+      .game .gradient {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: rotate(30deg);
+        transform-origin: top right;
+        width: 200%;
+        height: 65%;
+        opacity: 0.3;
+        background: linear-gradient(0turn, transparent 0%, rgba(200, 200, 200, 0.4) 5%, rgba(255, 255, 255, 0.2) 15%, rgba(255, 255, 255, 0.1) 100%);
+        transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
